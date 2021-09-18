@@ -39,8 +39,8 @@ let body = `
 `;
 
 exports.handler = async (event, context) => {
-    const sentence = event.queryStringParameters.sentence || "Hello, I'm kagata";
-    body = body.replace("{sentence}", sentence);
+    const name = event.queryStringParameters.name || "Hello, I'm kagata";
+    body = body.replace("{sentence}", name);
 
     return {
         statusCode: 200,
