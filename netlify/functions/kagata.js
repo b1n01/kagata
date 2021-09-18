@@ -1,4 +1,4 @@
-const fetch = import("node-fetch");
+const fetch = require("node-fetch");
 
 exports.handler = async (event, context) => {
     const sentence = event.queryStringParameters.sentence || "Hello, I'm kagata";
