@@ -1,7 +1,22 @@
 exports.handler = async (event, context) => {
+    let response = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello, I'm kagata</h1>
+</body>
+</html>
+    `;
+
   return {
     statusCode: 200,
-    headers: { "Content-Type  ": "text/html"},
-    body: "<h1>Hello, I'm Kagata</h1>"
+    headers: { "Content-Type": "text/html"},
+    body: response
   };
 };
