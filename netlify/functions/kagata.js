@@ -39,12 +39,12 @@ let body = `
 `;
 
 exports.handler = async (event, context) => {
-    const name = event.queryStringParameters.name || "Hello, I'm kagata";
-    body = body.replace("{sentence}", name);
+    const sentence = event.queryStringParameters.sentence || "Hello, I'm kagata";
+    body = body.replace("{sentence}", sentence);
 
     return {
         statusCode: 200,
         headers: { "Content-Type": "text/html" },
-        body: JSON.stringify(event.queryStringParameters),
+        body: event.queryStringParameters.sentence,
     };
 };
