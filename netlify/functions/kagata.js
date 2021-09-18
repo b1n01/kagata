@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 exports.handler = async (event, context) => {
     const sentence = event.queryStringParameters.sentence || "Hello, I'm kagata";
     const response = await fetch('https://raw.githubusercontent.com/b1n01/kagata/main/body.html');
-    let body = await response.body;
+    let body = await response.text();
     body = body.replace("{sentence}", sentence);
 
     return {
