@@ -1,6 +1,6 @@
 var fs = require('fs');
-// let body = fs.readFileSync('./body.html');
-let body = '';
+let body = fs.readFileSync(require.resolve('./body.html'));
+// let body = '';
 
 exports.handler = async (event, context) => {
     const sentence = event.queryStringParameters.sentence || "Hello, I'm kagata";
