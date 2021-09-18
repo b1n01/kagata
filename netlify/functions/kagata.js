@@ -1,4 +1,4 @@
-// const fs = require('fs');
+// const fs = require("fs");
 // const path = require("path");
 
 // @see https://answers.netlify.com/t/hosting-a-file-along-with-my-function/1527/21
@@ -8,7 +8,7 @@
 
 let body = `
 <!DOCTYPE html>
-<html lang="en" class='h-full'>
+<html lang="en" class="h-full">
 
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,7 @@ let body = `
     <style>
         @font-face {
             font-family: ElectroHarmonix;
-            src: url('https://raw.githubusercontent.com/b1n01/kagata/main/electroharmonix.regular.ttf');
+            src: url("https://raw.githubusercontent.com/b1n01/kagata/main/electroharmonix.regular.ttf");
         }
 
         html,
@@ -40,7 +40,7 @@ let body = `
 
 exports.handler = async (event, context) => {
     const sentence = event.queryStringParameters.sentence || "Hello, I'm kagata";
-    body.replace("{sentence}", sentence);
+    body = body.replace("{sentence}", sentence);
 
     return {
         statusCode: 200,
