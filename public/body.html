@@ -1,198 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
-	<meta charset='utf-8'>
-	<meta name='viewport' content='width=device-width,initial-scale=1'>
-    
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Kataga</title>
-
-	<link rel='icon' type='image/png' href='/favicon.svg'>
-    <!-- TODO replace this with a sane reset css -->
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-
-    <style>
-        @font-face {
-            font-family: ElectroHarmonix;
-            src: url("electroharmonix.regular.ttf");
-        }
-
-        :root {
-            --cream: #F5EEE3;
-            --blue: #15184E;
-            --red: #F63751;
-        }
-
-        html,
-        body {
-            font-family: ElectroHarmonix;
-            background-color: var(--cream);
-            color: var(--blue);
-            display: flex;
-            flex-direction: column;
-            min-height: 100%;
-            width: 100%;
-            align-items: center;
-        }
-
-        .container {
-            width: 900px;
-            border: 12px solid var(--blue);
-            padding: 12px;
-            margin: 32px;
-            position: relative;
-        }
-
-        header {
-            height: 150px;
-            position: relative;
-            transform: rotate(-5deg);
-        }
-
-        h1 {
-            color: var(--red);
-            font-size: 100px;
-            text-align: center;
-            z-index: 2;
-        }
-
-        .stamp {
-            border: 4px solid var(--blue);
-            border-radius: 50%;
-            padding: 8px;
-            height: 64px;
-            width: 64px;
-            text-align: center;
-            transform: rotate(20deg);
-            font-size: 16px;
-            position: absolute;
-            top: 80px;
-            right: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .content {
-            background-image: url(rays.svg);
-            background-repeat: no-repeat;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .content-rotate {
-            transform: rotate(-5deg) skewX(-5deg);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-
-        .banner {
-            background-color: var(--blue);
-            border: 12px solid var(--cream);
-            color: var(--cream);
-            padding: 18px;
-            margin: 60px 60px 10px 60px;
-            font-size: 80px;
-            text-align: center;
-        }
-
-        .banner::before {
-            content: '"';
-        }
-
-        .banner::after {
-            content: '"';
-        }
-
-        .author {
-            background-color: var(--blue);
-            border: 12px solid var(--cream);
-            color: var(--cream);
-            margin: 0 60px;
-            padding: 8px 32px;
-            text-align: right;
-            font-size: 24px;
-        }
-
-        .author::before {
-            content: '- ';
-        }
-
-        footer {
-            margin-top: 32px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .question {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            font-size: 32px;
-            padding: 0 16px 0 60px;
-            text-align: right;
-        }
-
-        .button-new {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            background-color: var(--red);
-            font-size: 32px;   
-            color: var(--cream);
-            padding: 8px;
-            margin: 18px 9px;
-            text-align: center;
-        }
-
-        .button-share {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            background-color: var(--blue);
-            font-size: 32px;   
-            color: var(--cream);
-            padding: 8px;
-            margin: 18px 0 18px 9px;
-            text-align: center;
-        }
-
-        .date {
-            text-orientation: upright;
-            writing-mode: vertical-lr;
-            position: absolute;
-            left: -45px;
-            bottom: 0;
-        }
-    </style>
+	<link rel="icon" type="image/png" href="/favicon.svg">
+    <link href="reset.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
         <header>
-            <h1>Kagata</h1>
+            <h1 class="title">Kagata</h1>
             <div class="stamp">
                 <p>でた</p>
                 <p>らめ</p>
             </div>
         </header>
-        <section class='content'>
-            <div class="content-rotate">
+        <section class="rays">
+            <div class="content">
                 <div class="banner">{content}</div>
                 <div class="author">{author}</div>
             </div>
         </section>
         <footer>
             <div class="question">Quancuno ha detto una kagata?</div>
-            <a href="/" class='button-new'>Crea un banner!</a>
-            <!-- TODO share-->
-            <a href="/" class='button-share'>Share</a>
+            <a href="/" class="button button-new">Crea un banner!</a>
+            <a href="/" id="share" class="button button-share">Share</a>
         </footer>
         <div class="date">{date}</div>
     </div>
 </body>
+
+<script>
+    const button = document.querySelector("#share");
+    button.addEventListener("click", event => {
+        event.preventDefault();
+        navigator.clipboard.writeText(window.location.href);
+        button.textContent = "Link copiato";
+        setTimeout(() => button.textContent = "Share", 3000);
+    });
+</script>
 
 </html>
