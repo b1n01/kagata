@@ -8,3 +8,7 @@
   query = {c = ":content"}
   force = true
   status = 200
+
+# see https://www.netlify.com/blog/2021/08/12/how-to-include-files-in-netlify-serverless-functions/
+#[functions."kagata"]
+#  included_files = ["functions/**.html"]
