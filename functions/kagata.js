@@ -5,7 +5,7 @@ exports.handler = async (event, context) => {
     const author = event.queryStringParameters.a || "Kagata";
     const date = new Date().toLocaleDateString("it-IT", {year: "numeric", month: "long", day: "numeric" });
 
-    const response = await fetch(process.env.ENDPOINT + "/body.html");
+    const response = await fetch(process.env.ENDPOINT + "/banner/index.html");
     let body = await response.text();
 
     body = body.replace("{content}", content);
