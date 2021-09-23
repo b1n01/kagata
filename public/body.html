@@ -2,25 +2,35 @@
 <html lang="en" class="h-full">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+    
+	<title>Kataga</title>
+
+	<link rel='icon' type='image/png' href='/favicon.svg'>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Kagata</title>
+
     <style>
         @font-face {
             font-family: ElectroHarmonix;
-            src: url("assets/electroharmonix.regular.ttf");
+            src: url("electroharmonix.regular.ttf");
+        }
+
+        :root {
+            --cream: #F5EEE3;
+            --blue: #15184E;
+            --red: #F63751;
         }
 
         html,
         body {
             font-family: ElectroHarmonix;
+            background-color: var(--cream);
         }
     </style>
 </head>
 
-<body class="h-full bg-red-600">
+<body class="h-full">
     <div class="flex w-full h-full justify-center items-center">
         <h1 class="text-6xl text-white border-8 p-16 m-8">{content}</h1>
     </div>
