@@ -17,3 +17,7 @@ It's basically a [SvelteJs](https://svelte.dev/) app that shows a landing page w
 
 ## Example
 ![kagata banner example](example.png "Kagata banner example")
+
+
+## TODO
+- [ ] Limit content and author lenght
