@@ -1,0 +1,18 @@
+@font-face {
+    font-family: ElectroHarmonix;
+    src: url("electroharmonix.regular.ttf");
+}
+
+:root {
+    --cream: #F5EEE3;
+    --blue: #15184E;
+    --red: #F63751;
+}
+
+body {
+    font-family: ElectroHarmonix;
+    background-color: var(--cream);
+    color: var(--blue);
+    max-width: 1600px;
+    margin: 0 auto;
+}

@@ -1,6 +1,6 @@
 @font-face {
     font-family: ElectroHarmonix;
-    src: url("electroharmonix.regular.ttf");
+    src: url("../electroharmonix.regular.ttf");
 }
 
 :root {
@@ -67,6 +67,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    overflow: hidden;
 }
 
 .banner {
