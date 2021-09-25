@@ -26,7 +26,7 @@
     <h1 class="red text-5xl my-4">Kagata</h1>
   </header>
 
-  <div class="flex mt-8">
+  <div class="flex my-8">
 
     <section class="flex flex-col items-start {showPreview ? "w-2/5 mr-4" : "w-full mx"}">
       <p class="text-lg">Fai sapere a quell'amico che dice sempre kagate che ne ha detta un'altra!</p>
@@ -45,7 +45,7 @@
         class="w-full mt-2 py-4 px-8"
       />
     
-      <a class="bg-red cream mt-8 border rounded px-8 py-4" href={link}>Go</a>
+      <a class="bg-red cream mt-8 border rounded px-8 py-4" href={link}>Vai</a>
     </section>
 
     {#if showPreview}
