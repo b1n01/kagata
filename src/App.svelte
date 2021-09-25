@@ -29,7 +29,7 @@
   <div class="flex mt-8">
 
     <section class="flex flex-col items-start {showPreview ? "w-2/5 mr-4" : "w-full mx"}">
-      <p class="text-lg">Fai sapere a quell'amico che dice sempre kagate che ne ha detta un altra!</p>
+      <p class="text-lg">Fai sapere a quell'amico che dice sempre kagate che ne ha detta un'altra!</p>
 
       <p class="red mt-16">Qual'è la kagata?</p>
       <input type="text" 
