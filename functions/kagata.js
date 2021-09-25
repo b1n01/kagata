@@ -1,8 +1,8 @@
 import fetch from "node-fetch";
 
 exports.handler = async (event, context) => {
-    const content = event.queryStringParameters.c || "Hello, I'm kagata";
-    const author = event.queryStringParameters.a || "Kagata";
+    const content = event.queryStringParameters.c || "Questa è una Kagata";
+    const author = event.queryStringParameters.a || "Sei chi sei";
     const date = new Date().toLocaleDateString("it-IT", {year: "numeric", month: "long", day: "numeric" });
 
     const response = await fetch(process.env.ENDPOINT + "/banner/index.html");
